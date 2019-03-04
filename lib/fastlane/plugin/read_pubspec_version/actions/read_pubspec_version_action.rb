@@ -40,7 +40,7 @@ module Fastlane
           puts("")
 
         else
-          UI.user_error("No pubspec found")
+          UI.error("No pubspec found")
         end
 
       end
@@ -73,7 +73,7 @@ module Fastlane
           FastlaneCore::ConfigItem.new(key: :path_to_pubspec,
                                   env_name: "PATH_TO_PUBSPEC_OPTION",
                                description: "An absolute path to the relevant pubspec.yaml file",
-                                  optional: false,
+                                  optional: true,
                                       type: String)
         ]
       end
