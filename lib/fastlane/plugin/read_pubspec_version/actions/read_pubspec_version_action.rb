@@ -16,14 +16,14 @@ module Fastlane
         
         # check if path_to_pubspec included in params
         if params[:path_to_pubspec] then
-          UI.message("pubspec path found in params")
+          UI.verbose("pubspec path found in params")
           path = params[:path_to_pubspec]
         else 
-          UI.message("Try the default pubspec.yaml location")
+          UI.verbose("Try the default pubspec.yaml location")
           path = File.join(File.dirname(__FILE__), '../..', 'pubspec.yaml')   
         end
 
-        UI.message("path: #{path} found: #{File.exist?(path)}")
+        UI.verbose("path: #{path} found: #{File.exist?(path)}")
         
         if File.exist?(path) then
           UI.verbose('pubspec.yaml file found')
@@ -32,7 +32,7 @@ module Fastlane
           pubspec_version = pubspec_yaml["version"]
 
           # check
-          version, build = pubspec_version["version"].split('+', 2)
+          version, build = pubspec_version.split('+', 2)
 
           Actions.lane_context[SharedValues::PUBSPEC_VERSION] = version
           Actions.lane_context[SharedValues::PUBSPEC_BUILD] = build
