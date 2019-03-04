@@ -70,11 +70,11 @@ module Fastlane
 
       def self.available_options
         [
-          # FastlaneCore::ConfigItem.new(key: :your_option,
-          #                         env_name: "READ_PUBSPEC_VERSION_YOUR_OPTION",
-          #                      description: "A description of your option",
-          #                         optional: false,
-          #                             type: String)
+          FastlaneCore::ConfigItem.new(key: :path_to_pubspec,
+                                  env_name: "PATH_TO_PUBSPEC_OPTION",
+                               description: "An absolutel path to the relevant pubspec.yaml file",
+                                  optional: false,
+                                      type: String)
         ]
       end
 
