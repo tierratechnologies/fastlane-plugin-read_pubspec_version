@@ -39,10 +39,13 @@ module Fastlane
 
           pubspec_hash = {'version' => version, 'build' => build}
 
-          puts("")
-          puts(pubspec_hash)
-          puts("")
+          # puts("")
+          # puts(pubspec_hash)
+          # puts("")
 
+          UI.verbose("pubspec_hash #{pubspec_hash}")
+
+          # is return value
           pubspec_hash
 
         else
