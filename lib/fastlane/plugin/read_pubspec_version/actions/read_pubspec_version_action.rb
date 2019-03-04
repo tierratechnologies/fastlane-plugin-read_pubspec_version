@@ -37,9 +37,13 @@ module Fastlane
           Actions.lane_context[SharedValues::PUBSPEC_VERSION] = version
           Actions.lane_context[SharedValues::PUBSPEC_BUILD] = build
 
+          pubspec_hash = {'version' => version, 'build' => build}
+
           puts("")
-          puts({'version' => version, 'build' => build})
+          puts(pubspec_hash)
           puts("")
+
+          pubspec_hash
 
         else
           UI.error("No pubspec found")
@@ -86,6 +90,13 @@ module Fastlane
         #
         # [:ios, :mac, :android].include?(platform)
         true
+      end
+
+      def self.output
+        [
+          'PUBSPEC_VERSION', 'The version String contained in the pubspec.yaml file',
+          'PUBSPEC_BUILD', 'The build String contained in the pubspec.yaml file'
+        ]
       end
     end
   end
