@@ -38,7 +38,7 @@ module Fastlane
           Actions.lane_context[SharedValues::PUBSPEC_BUILD] = build
 
           puts("")
-          puts({version => version, build => build})
+          puts({'version' => version, 'build' => build})
           puts("")
 
         else
