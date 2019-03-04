@@ -23,7 +23,7 @@ module Fastlane
           path = File.join(File.dirname(__FILE__), '../..', 'pubspec.yaml')   
         end
 
-        UI.message("path: #{path}")
+        UI.message("path: #{path} found: #{File.exist?(path)}")
         
         if File.exist?(path) then
           UI.verbose('pubspec.yaml file found')
